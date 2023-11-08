@@ -1,6 +1,19 @@
 #main.tf
 
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.24.0"
+    }
+  }
+}
+
+provider "aws" {
+    region = "us-east-1"
+}
+
 module"s3"{
-	source="https://github.com/IshaSingh0228/S3module/blob/48b44b030565f8e189c11b883e386aedb17c4b66/s3.tf"
+	source="git::https://github.com/IshaSingh0228/S3module.git"
 
 	}
