@@ -1,0 +1,38 @@
+#Providers.tf
+
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = ">=5.24.0"
+    }
+  }
+}
+
+
+#S3.tf
+
+resource "aws_s3_bucket" "mys3" {
+  bucket = "${var.bucketname}"
+  tags = "${var.tags}"
+  }
+
+#Variables.tf
+
+variable "bucketname" {}
+variable "tags" {}
+
+#myvars.tfvars
+
+bucketname="mys3bucket"
+tags= {
+	env="Dev"
+	}
+
+
+#output.tf
+
+output"mys3bucketname"{
+	value= "${aws_s3_bucket.mys3.bucketname}"
+	}
+
