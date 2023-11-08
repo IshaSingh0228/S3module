@@ -1,6 +1,6 @@
 #main.tf
 
 module"s3"{
-	source="https://github.com/Chandu1061/S3module/blob/d3b42de5b8fb25ea9a5bbd65f360275f21aea146/S3.txt"
+	source="https://github.com/IshaSingh0228/S3module/blob/48b44b030565f8e189c11b883e386aedb17c4b66/s3.tf"
 
 	}
